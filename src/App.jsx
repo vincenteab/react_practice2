@@ -7,9 +7,16 @@ export default function App(){
   function handleAdd(e){
     e.preventDefault()
     
-    setNewTexts((currentTexts) => {
-      return [...currentTexts, {id: crypto.randomUUID(), title: newItem, completed: false},]
-    })
+    if (newItem != ""){
+      setNewTexts((currentTexts) => {
+        return [...currentTexts, {id: crypto.randomUUID(), title: newItem, completed: false},]
+      })
+    
+      setNewItem("")
+    }
+    
+    
+    
   }
 
   return <>
@@ -24,7 +31,7 @@ export default function App(){
     <div className="user-messages">
       {texts.map(text => {
         return <>
-        <label>{text.title}</label>
+        <label key={text.id}>{text.title}</label>
         <br />
         </>
       })}
