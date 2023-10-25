@@ -1,4 +1,5 @@
 import { useState } from "react"
+import './style.css'
 
 export default function App(){
   const [newItem, setNewItem] = useState("")
@@ -7,27 +8,34 @@ export default function App(){
   function handleAdd(e){
     e.preventDefault()
     
-    setNewTexts((currentTexts) => {
-      return [...currentTexts, {id: crypto.randomUUID(), title: newItem, completed: false},]
-    })
+    if (newItem != ""){
+      setNewTexts((currentTexts) => {
+        return [...currentTexts, {id: crypto.randomUUID(), title: newItem, completed: false},]
+      })
+    }
+
+    setNewItem("")
+    
   }
 
   return <>
     <form onSubmit={handleAdd}>
-      <div>
-      <label htmlFor="" >Type anything</label>
+      <div className="form">
+      <label className="title" htmlFor="" >Type anything</label>
       <br />
-      <input value={newItem} onChange={e => setNewItem(e.target.value)}type="text"/>
-      <button>Add</button>
+      <div className="type-and-add">
+        <input value={newItem} onChange={e => setNewItem(e.target.value)} type="text" className="type-text"/>
+        <button className="add-button">Add</button>
+      </div>
+      
       </div>
     </form>
-    <div className="user-messages">
+    <ul className="all-user-messages">
       {texts.map(text => {
         return <>
-        <label>{text.title}</label>
-        <br />
+        <li className="user-messages">{text.title}</li>
         </>
       })}
-    </div>
+    </ul>
   </>
 }

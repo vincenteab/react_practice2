@@ -1,0 +1,34 @@
+.all-user-messages {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.user-messages {
+    margin:auto;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.title {
+    align-self: center;
+}
+
+.type-and-add {
+    align-self: center;
+}
+
+/* .type-text {
+    align-self: center;
+    width: 100px;
+}
+
+.add-button {
+    align-self: center;
+    width: 50px;
+
+} */
