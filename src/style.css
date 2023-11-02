@@ -1,54 +1,42 @@
+
+
+.title {
+    display: block;
+    text-align: center;
+    font-size: 45px;
+}
+
 .all-user-messages {
     list-style-type: none;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+    text-align: right;
+
 }
-
-.user-messages {
-    margin:auto;
-}
-
-.div-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
 
 .form-content {
     position: absolute;
     bottom: 0;
     display: flex;
-    flex-direction: column;
-    
-    
 }
 
-.div-title{
-    display: flex;
-    justify-content: center;
-}
 
-.title {
-    text-align: center;
-    font-size: 45px;
-}
 
 .type-and-add {
     align-self: center;
 }
 
+.page-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    justify-items: center;
+    
 
-
-/* .type-text {
-    align-self: center;
-    width: 100px;
 }
 
-.add-button {
-    align-self: center;
-    width: 50px;
 
-} */
+.div-form{
+
+}

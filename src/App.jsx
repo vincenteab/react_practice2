@@ -19,30 +19,30 @@ export default function App(){
   }
 
   return <>
-    <div className="div-title">
-      <label className="title" htmlFor="" >Chatroom</label>
-    </div>
+    <label className="title" htmlFor="" >Chatroom</label>
+    <div className="page-container">
+      <div className="div-form">
+        <form onSubmit={handleAdd} className="form-element">
+          <div className="form-content">
+          
+            <input value={newItem} onChange={e => setNewItem(e.target.value)} type="text" className="type-text"/>
+            <button className="add-button">Add</button>
+          
+          
+          </div>
+        </form>
+      </div>
       
-    <div className="div-form">
-      <form onSubmit={handleAdd} className="form-element">
-        <div className="form-content">
-        
-        <br />
-        <div className="type-and-add">
-          <input value={newItem} onChange={e => setNewItem(e.target.value)} type="text" className="type-text"/>
-          <button className="add-button">Add</button>
-        </div>
-        
-        </div>
-      </form>
+      <ul className="all-user-messages">
+        {texts.map(text => {
+          return <>
+          <li className="user-messages">{text.title}</li>
+          <br />
+          </>
+        })}
+      </ul>
+
     </div>
     
-    <ul className="all-user-messages">
-      {texts.map(text => {
-        return <>
-        <li className="user-messages">{text.title}</li>
-        </>
-      })}
-    </ul>
   </>
 }
